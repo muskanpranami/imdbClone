@@ -1,0 +1,152 @@
+:root{
+    --page-background-color: rgb(25, 42, 103);
+    --text-color: rgb(194, 46, 33);
+}
+
+body{
+    background-color: var(--page-background-color);
+
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+/* Navbar */
+
+.logo_text{
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 0;
+}
+
+.navbar{
+    background-color: white;
+    border-radius: 25px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: fixed; */
+    z-index: 90;
+    box-shadow: 0 0 10px rgb(202, 136, 136);
+    opacity: 0.8;
+}
+
+#year{
+    display: flex;
+    font-size: 1rem;
+    padding-left: 5px;
+    color: azure;
+    columns: 2;
+}
+#runtime{
+    display: flex;
+    padding-left: 0px;
+    color: azure;
+    columns: 2;
+
+}
+
+h1{
+    color: azure;
+    padding-left: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar-brand{
+    margin-left: 20px;
+}
+
+
+
+#rate{
+    padding-left: 30%;
+}
+
+#rating{
+    color: azure;
+}
+
+h6{
+    color: azure;
+
+}
+
+.fa-star{
+    color: goldenrod;
+}
+
+h1{
+    display: flex;
+
+}
+
+.card{
+    border: 0;
+    background-color: #9999de;
+}
+
+.card-text{
+    text-align: justify;
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-family:Arial, Helvetica, sans-serif;
+    color: rgb(39, 34, 34);
+}
+
+.info{
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgb(91, 81, 81);
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.card-title{
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgb(91, 81, 81);
+    font-family:Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+}
+
+.information{
+    font-weight: 500;
+    font-size: 0.9em;
+    color: rgb(39, 34, 34);
+}
+
+/* Responsiveness */
+@media screen and (max-width: 767px) {
+    #poster {
+      margin-top: 3rem;
+      border-radius: 5px !important;
+    }
+
+    #runtime{
+        font-size: 0.6rem;
+    }
+
+  }
+  
+  @media screen and (max-width: 576px) {
+    #title {
+      font-size: x-large;
+    }
+  
+    h6 {
+      font-size: medium;
+    }
+  
+    h5 {
+      font-size: medium;
+    }
+  
+    #poster {
+      margin-top: 0px;
+      width: 100%;
+    }
+
+}

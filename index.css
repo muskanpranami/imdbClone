@@ -1,0 +1,360 @@
+:root{
+    --page-background-color: rgb(25, 42, 103);
+    --text-color: rgb(194, 46, 33);
+    --card-color: black;
+    --favorite-text: rgb(149, 157, 210);
+    --delete-button-color: red;
+    --heart-red-color: #971c36;
+}
+
+body{
+ background-color: var(--page-background-color);
+ color: var(--text-color);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+/* Navbar */
+
+.logo_text{
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 0;
+}
+
+.navbar{
+    background-color: white;
+    border-radius: 25px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: fixed; */
+    z-index: 90;
+    box-shadow: 0 0 10px rgb(202, 136, 136);
+    opacity: 0.8;
+}
+
+i{
+    cursor: pointer;
+}
+
+.navbar-brand{
+    margin-left: 20px;
+}
+
+#search-box{
+    height: 40px;
+    width: 50vw;
+}
+
+form {
+    width: inherit;
+    border-radius: 30px;
+    background-color: var(--page-background-color);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+#search-box input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: var(--page-background-color);
+    border-radius: 30px;
+    color: gray;
+    font-size: 16px;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#search-btn {
+    height: 2.9rem;
+    width: 4.5rem;
+    border: transparent;
+    border-radius: 50%;
+    background-color: var(--page-background-color)
+}
+
+.search-icon {
+    font-size: 20px;
+    color: black;
+    background-color:var(--page-background-color)
+}
+
+#show-favourites {
+    font-size: 1.7rem;
+    padding-right: 20px;
+}
+
+#show-favourites:hover{
+    border-bottom: 2px solid cadetblue;
+}
+
+/* Main Section */
+#main-section{
+    min-height: 89vh;
+    width: 65%;
+}
+
+#suggestions{
+    justify-content: center;
+    min-height: 100%;
+    padding: 2rem;
+}
+
+#favorites-section{
+    padding-top: 1rem;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    background-color: white;
+    box-shadow: 0 0 10px rgb(202, 136, 136);
+    border-radius: 25px;
+    opacity: 0.8;
+}
+
+h2{
+    padding-left: 0.7rem;
+    margin-top: 0.5rem;
+    color: var(--favorite-text);
+    font-family:cursive;
+    text-shadow: 0 2px gray;
+    font-size: 2.0rem;
+}
+
+p{
+    color: var(--favorite-text);
+    font-family:'Times New Roman', Times, serif;
+}
+
+/* Card-Container */
+
+a{
+    box-sizing: border-box;
+}
+
+#card-container{
+    width: inherit;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.card{
+    border: transparent;
+    background-color: var(--card-color);
+    width: 10rem;
+}
+
+.card > img:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.card-title {
+    font-size: medium;
+    font-weight: 500;
+}
+  
+.card-title a {
+    text-decoration: none;
+    color: rgb(233, 233, 196)
+  }
+  
+  .card-title a:hover {
+    text-decoration: underline;
+  }
+  
+  .card-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .fa-star {
+    color: goldenrod;
+  }
+  
+  .text-decoration {
+    text-decoration: none;
+  }
+  
+  #rating {
+    font-size: small;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+  
+  .fav-btn {
+    border: transparent;
+    background-color: transparent;
+    text-align: center;
+  }
+  
+  .fa-heart {
+    color: red
+  }
+  
+  .fa-heart:hover {
+    color: darksalmon;
+}
+  
+  /* FAVORITES SECTION */
+  
+  #favorites-section {
+    width: 33%;
+    height: 100vh;
+    z-index: 1;
+    flex-direction: column;
+  }
+  
+  #empty-fav {
+    margin-top: 40%;
+    margin-left: 15%;
+  }
+  
+  #fav-movies-container {
+    overflow-y: scroll;
+    width: 90%;
+    height: 90%;
+  }
+  
+  /* Scrollbar customisation */
+  
+  #fav-movies-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  #fav-movies-container::-webkit-scrollbar-track {
+    border-radius: 20px;
+  }
+  
+  /* Handle */
+  #fav-movies-container::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+  }
+  
+  .fav-movie-card {
+    padding-right: 1rem;
+    width: 95%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .fav-movie-poster {
+    width: 80px;
+    height: 100px;
+  }
+  
+  .fav-movie-name {
+    text-decoration: none;
+    color: var(--favorite-text);
+    font-family: cursive;
+  }
+  
+  .fav-movie-name:hover {
+    color: rgb(67, 67, 145);
+    text-decoration: underline;
+  }
+  
+  .movie-card-details {
+    width: 60%;
+  }
+  
+  .delete-btn {
+    cursor: pointer;
+  }
+  
+  .fa-trash-can {
+    color: var(--delete-button-color);
+    font-size: 1.3rem;
+  }
+  
+  .fa-trash-can:hover {
+    color: var(--heart-red-color);
+  }
+  
+  /* Responsiveness */
+  
+  @media screen and (max-width: 1200px) {
+    #card-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    #card-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    #favorites-section {
+      width: 40vw;
+      height: 100vh;
+    }
+  
+    .card {
+      width: 8rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+  
+    #favorites-section {
+      display: none;
+      position: absolute;
+      right: 0;
+      width: 60vw;
+      height: 100vh;
+    }
+  
+    #show-favourites {
+      padding-right: 1rem;
+      display: block;
+    }
+  
+    #main-section {
+      min-height: 100vh;
+      width: 100vw;
+    }
+  
+    #card-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    #search-box {
+      margin-left: 3%;
+      height: 35px;
+      width: 55vw;
+      padding-bottom: 2.5rem;
+    }
+  
+    #show-favourites {
+      padding-right: 0.1rem;
+    }
+  
+    #card-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .card {
+      width: 9rem;
+    }
+  
+    #favorites-section {
+      width: 100vw;
+      height: 100vh;
+    }
+  }

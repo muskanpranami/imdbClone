@@ -1,5 +1,6 @@
 "use strict";
 (function () {
+  // Extracting all the HTML attributes using DOM
   const searchKeyword = document.getElementById("search");
   const suggestionsContainer = document.getElementById("card-container");
   const favMoviesContainer = document.getElementById("fav-movies-container");
@@ -7,19 +8,22 @@
   const showFavourites = document.getElementById("favorites-section");
   const emptyFavText = document.getElementById("empty-fav");
 
-
+// Function Call
   addFav();
   showEmpty();
+
   let suggestionList = [];
   let favMovieArray = [];
   let debounceTimeout;
 
+  // Event Listener on the Search Button
   searchKeyword.addEventListener("keydown", (event) => {
     if (event.key == "Enter") {
       event.preventDefault();
     }
   });
 
+  //Showing the behaviour of the favorites section text when it is filled and empty
   function showEmpty() {
     if (favMoviesContainer.innerHTML == "") {
       emptyFavText.style.display = "block";
@@ -28,30 +32,37 @@
     }
   }
 
-  // Event listener on search
+  // Event listener on search while typing on the textbox
   searchKeyword.addEventListener("input", function () {
     let search = searchKeyword.value.trim();
     clearTimeout(debounceTimeout);
 
+    //Debounce functionality to not fire the code abruptly
     debounceTimeout = setTimeout(async () => {
+      //if the search is empty
       if (search === "") {
+        //display the expty text in block form
         emptyText.style.display = "block";
         suggestionsContainer.innerHTML = "";
+        //empty the suggestion array
         suggestionList = [];
       } else {
+        //hide the empty text String
         emptyText.style.display = "none";
         try {
+          //fetch movies from the API, store in data variable and call addSuggestions function
           let data = await fetchMovies(search);
           addSuggestions(data);
         } catch (err) {
           console.error(err);
         }
+        display the suggestions in the grid layout
         suggestionsContainer.style.display = "grid";
       }
     }, 300); // 300 milliseconds debounce time
   });
 
-  // Fetches data from api and calls function to add it in
+  // Fetches data from API and calls function to add it in
   async function fetchMovies(search) {
     const url = `https://www.omdbapi.com/?t=${search}&apikey=d19cd846`;
     try {
@@ -80,7 +91,8 @@
       suggestionList.push(data);
       const movieCard = document.createElement("div");
       movieCard.setAttribute("class", "text-decoration");
-
+      
+// Setting the style of the Movie Cards
       movieCard.innerHTML = `
         <div class="card my-2" data-id = " ${data.Title} ">
         <a href="moviePage.html" >

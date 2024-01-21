@@ -13,8 +13,12 @@ CineRant is a web application that mimics the functionality of the popular Inter
 
 ## Technologies Used
 
-- **Frontend:** HTML, CSS (Bootsrtap), JavaScript.
+- **Frontend:** HTML, CSS (Bootstrap), JavaScript.
 - **External APIs:** OMDB API
+
+## Demo
+
+Please visit the link to see the Demo: https://helpful-mooncake-a98b7e.netlify.app/
 
 ## Setup Instructions
 
